@@ -1,3 +1,5 @@
+@import "base/button";
+
 .hero {
   @include adaptiveValue("height", 795, 406);
   background-image: url("@img/hero/hero.png");
@@ -39,21 +41,5 @@
 
     @include adaptiveValue("margin-bottom", 28, 24, 0, 1366, 600);
     @include adaptiveValue("margin-bottom", 24, 20, 3, 600, 320);
-  }
-}
-
-.button {
-  font-weight: 600;
-  letter-spacing: toRem(1.35);
-
-  @include adaptiveValue("line-height", 19, 18, 0, 600, 320);
-  border: 1px solid $secondaryColor;
-  padding: 10px 21px 10px 21px;
-
-  transition: background-color $mainTransition;
-
-  &:hover,
-  &:focus {
-    background-color: $hoverBgLight;
   }
 }

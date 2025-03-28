@@ -1,0 +1,28 @@
+.button {
+  font-weight: 600;
+  letter-spacing: toRem(1.35);
+  padding: 10px 21px 10px 21px;
+  @include adaptiveValue("line-height", 19, 18, 0, 600, 320);
+
+  transition: background-color $mainTransition;
+}
+
+.button.button-dark {
+  color: $mainColor;
+  border: 1px solid $mainColor;
+
+  &:hover,
+  &:focus {
+    background-color: $hoverBgDark;
+  }
+}
+
+.button.button-light {
+  color: $secondaryColor;
+  border: 1px solid $secondaryColor;
+
+  &:hover,
+  &:focus {
+    background-color: $hoverBgLight;
+  }
+}
