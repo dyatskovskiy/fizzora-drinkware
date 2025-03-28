@@ -1,0 +1,90 @@
+.header {
+  &__container {
+    @include adaptiveValue("padding-left", 32, 16, 0, 1366, 600);
+    @include adaptiveValue("padding-right", 32, 16, 3, 1366, 600);
+  }
+  &__body {
+    @include adaptiveValue("padding-top", 32, 24, 0, 1366, 600);
+    @include adaptiveValue("padding-top", 24, 16, 3, 600, 320);
+
+    @include adaptiveValue("padding-bottom", 32, 24, 0, 1366, 600);
+    @include adaptiveValue("padding-bottom", 24, 16, 3, 600, 320);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: auto;
+    font-family: "Montserrat", sans-serif;
+    @include adaptiveValue("font-size", 35, 26, 0, 600, 320);
+    @include adaptiveValue("letter-spacing", 1.4, 1.04, 0, 600, 320);
+    line-height: 1;
+  }
+}
+
+.navigation {
+  &__list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: toRem(520)) {
+  .navigation {
+    &__list {
+      gap: toRem(40);
+    }
+
+    &__item {
+      &:not(:first-child) {
+        display: unset;
+        visibility: visible;
+      }
+
+      &:nth-child(4),
+      &:nth-child(5) {
+        display: none;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+@media (min-width: toRem(768)) {
+  .header {
+    &__logo {
+      margin-right: toRem(130);
+    }
+  }
+
+  .navigation {
+    flex-grow: 1;
+    &__item {
+      &:nth-child(4),
+      &:nth-child(5) {
+        display: unset;
+        visibility: visible;
+      }
+
+      &:nth-child(3) {
+        margin-right: auto;
+      }
+      &:nth-child(4) {
+        margin-left: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.hero {
+  @include adaptiveValue("height", 795, 406);
+  background-image: url("@img/hero/hero.png");
+  background-size: cover;
+  @include adaptiveValue("background-position-x", 0, -50, 0, 900, 600);
+
+  &__content {
+    @include adaptiveValue("padding-left", 58, 0, 0, 1366, 600);
+  }
+}
+
+.content {
+  color: $secondaryColor;
+
+  @include adaptiveValue("padding-top", 200, 114, 0, 1920, 600);
+  @include adaptiveValue("padding-top", 114, 194, 3, 600, 320);
+
+  &__top-text {
+    line-height: math.div(20, 14);
+
+    @include adaptiveValue("margin-bottom", 10, 14, 0, 1366, 600);
+    @include adaptiveValue("margin-bottom", 14, 12, 3, 600, 320);
+  }
+
+  &__title {
+    font-weight: 700;
+
+    @include adaptiveValue("letter-spacing", -0.533, -0.367, 0, 1366, 600);
+    @include adaptiveValue("letter-spacing", -0.367, -0.35, 3, 600, 320);
+
+    @include adaptiveValue("line-height", 75, 55, 0, 1366, 600);
+    @include adaptiveValue("line-height", 55, 53, 3, 600, 320);
+
+    @include adaptiveValue("max-width", 365, 255, 0, 1366, 600);
+    @include adaptiveValue("max-width", 255, 233, 3, 600, 320);
+
+    @include adaptiveValue("font-size", 64, 44, 0, 1366, 600);
+    @include adaptiveValue("font-size", 44, 42, 3, 600, 320);
+
+    @include adaptiveValue("margin-bottom", 28, 24, 0, 1366, 600);
+    @include adaptiveValue("margin-bottom", 24, 20, 3, 600, 320);
+  }
+}
+
+.button {
+  font-weight: 600;
+  letter-spacing: toRem(1.35);
+
+  @include adaptiveValue("line-height", 19, 18, 0, 600, 320);
+  border: 1px solid $secondaryColor;
+  padding: 10px 21px 10px 21px;
+
+  transition: background-color $mainTransition;
+
+  &:hover,
+  &:focus {
+    background-color: $hoverBgLight;
+  }
+}
