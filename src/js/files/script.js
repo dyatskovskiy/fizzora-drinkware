@@ -38,21 +38,21 @@ function activateXScroll() {
 
       isDown = true;
       document.body.style.userSelect = "none";
-      scrollContainer.classList.add("scroll-active");
+      scrollContainer.style.cursor = "grabbing";
       startX = e.pageX - scrollContainer.offsetLeft;
       scrollLeft = scrollContainer.scrollLeft;
     });
 
     scrollContainer.addEventListener("mouseleave", () => {
       isDown = false;
-      scrollContainer.classList.remove("scroll-active");
       document.body.style.userSelect = "";
+      scrollContainer.style.cursor = "unset";
     });
 
     scrollContainer.addEventListener("mouseup", () => {
       isDown = false;
-      scrollContainer.classList.remove("scroll-active");
       document.body.style.userSelect = "";
+      scrollContainer.style.cursor = "unset";
     });
 
     scrollContainer.addEventListener("mousemove", (e) => {
