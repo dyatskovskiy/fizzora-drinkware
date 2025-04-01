@@ -4,7 +4,10 @@
   <body>
     <div class="wrapper">
       @@include('html/_header.htm',{})
-      <main class="page">@@include('html/sections/hero.html')</main>
+      <main class="page">
+        @@include('html/hero.html', {})
+        @@include('html/products.html', {})
+      </main>
       @@include('html/_footer.htm',{})
     </div>
     @@include('html/_js.htm',{})

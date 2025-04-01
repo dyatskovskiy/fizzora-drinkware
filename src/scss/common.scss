@@ -1,1 +1,55 @@
 // Заголовки, загальні БЕМ блоки та інше...
+
+// Title styles =====================
+.section {
+  @include adaptiveValue("margin-top", 120, 70, 0, 1366, 600);
+  @include adaptiveValue("margin-top", 70, 60, 3, 600, 320);
+}
+
+.title-h2 {
+  font-weight: 700;
+
+  @include adaptiveValue("font-size", 34, 28, 0, 1366, 600);
+  @include adaptiveValue("font-size", 34, 28, 3, 1366, 600);
+
+  @include adaptiveValue("line-height", 40, 35, 0, 1366, 600);
+
+  @include adaptiveValue("letter-spacing", 0.25, 0.206, 0, 1366, 600);
+}
+
+.title-h3 {
+  line-height: math.div(28, 24);
+
+  @include adaptiveValue("font-size", 24, 22, 0, 1366, 600);
+}
+
+// Button styles ====================
+.button {
+  font-weight: 600;
+  letter-spacing: toRem(1.35);
+  padding: 10px 21px 10px 21px;
+  @include adaptiveValue("line-height", 19, 18, 0, 600, 320);
+
+  transition: background-color $mainTransition;
+}
+
+.button.button-dark {
+  color: $mainColor;
+  border: 1px solid $mainColor;
+
+  &:hover,
+  &:focus {
+    background-color: $hoverBgDark;
+  }
+}
+
+.button.button-light {
+  color: $secondaryColor;
+  border: 1px solid $secondaryColor;
+
+  &:hover,
+  &:focus {
+    background-color: $hoverBgLight;
+  }
+}
+// ============================================================== //

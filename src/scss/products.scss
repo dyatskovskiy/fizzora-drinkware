@@ -1,0 +1,116 @@
+.products {
+  &__container {
+    @include adaptiveValue("padding-left", 50, 15, 0, 1366, 600);
+
+    display: flex;
+    flex-direction: row;
+
+    @include adaptiveValue("gap", 20, 14, 0, 1366, 600);
+    @include adaptiveValue("gap", 14, 32, 3, 600, 320);
+
+    @include adaptiveValue("height", 725, 487, 0, 1366, 600);
+  }
+
+  &__category {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include adaptiveValue("flex-basis", 430, 242, 0, 1366, 600);
+    flex-shrink: 0;
+  }
+
+  &__category-title {
+    @include adaptiveValue("max-width", 279, 181, 0, 1366, 600);
+    @include adaptiveValue("max-width", 181, 198, 3, 600, 320);
+
+    @include adaptiveValue("font-size", 28, 22, 0, 600, 320);
+  }
+
+  &__category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__category-item {
+    @include adaptiveValue("font-size", 24, 18, 0, 1366, 600);
+    @include adaptiveValue("font-size", 18, 14, 3, 600, 320);
+
+    @include adaptiveValue("line-height", 28, 26, 0, 1366, 600);
+    cursor: pointer;
+    width: min-content;
+    text-wrap: nowrap;
+  }
+  &__category-item.active {
+    font-weight: 700;
+  }
+}
+
+.banner {
+  @include adaptiveValue("padding", 20, 10);
+
+  flex-shrink: 0;
+  @include adaptiveValue("flex-basis", 430, 259, 0, 1366, 600);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-image: url("@img/products/1.png");
+  @include adaptiveValue("padding-top", 20, 68, 0, 600, 320);
+
+  &:last-child {
+    background-image: url("@img/products/2.png");
+    @include adaptiveValue("padding-top", 567, 225);
+  }
+
+  &__title {
+    color: $secondaryColor;
+    @include adaptiveValue("max-width", 190, 193, 0, 1366, 600);
+    @include adaptiveValue("max-width", 193, 158, 3, 600, 320);
+
+    @include adaptiveValue("margin-bottom", 24, 32, 0, 1366, 600);
+    @include adaptiveValue("margin-bottom", 32, 18, 3, 600, 320);
+  }
+}
+
+@media (max-width: $tablet) {
+  .products {
+    &__container {
+      flex-direction: column;
+      height: auto;
+    }
+
+    &__category {
+      flex-basis: unset;
+      justify-content: unset;
+      gap: toRem(16);
+    }
+
+    &__category-list {
+      gap: toRem(8);
+    }
+  }
+
+  .banner {
+    &:first-child {
+      background-position-y: 40%;
+    }
+  }
+}
+
+// стилі для горизонтального скроллу
+.scroll-container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Для плавного скролла на iOS */
+  scrollbar-width: none; /* Скрытие скроллбара */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container.scroll-active {
+  cursor: grabbing;
+}
