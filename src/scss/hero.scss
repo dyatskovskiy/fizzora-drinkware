@@ -5,7 +5,7 @@
   @include adaptiveValue("background-position-x", 0, -50, 0, 900, 600);
 
   &__content {
-    @include adaptiveValue("padding-left", 35, 0, 0, 1366, 600);
+    @include adaptiveValue("padding-left", 72, 16, 0, 1366, 600);
   }
 }
 

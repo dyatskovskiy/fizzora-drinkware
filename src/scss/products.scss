@@ -1,6 +1,6 @@
 .products {
   &__container {
-    @include adaptiveValue("padding-left", 50, 15, 0, 1366, 600);
+    @include adaptiveValue("padding-left", 72, 16, 0, 1366, 600);
 
     display: flex;
     flex-direction: row;

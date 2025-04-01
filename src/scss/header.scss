@@ -1,14 +1,15 @@
 .header {
   &__container {
-    @include adaptiveValue("padding-left", 32, 16, 0, 1366, 600);
-    @include adaptiveValue("padding-right", 32, 16, 3, 1366, 600);
-  }
-  &__body {
+    @include adaptiveValue("padding-left", 38, 16, 0, 1366, 600);
+    @include adaptiveValue("padding-right", 38, 16, 0, 1366, 600);
+
     @include adaptiveValue("padding-top", 32, 24, 0, 1366, 600);
     @include adaptiveValue("padding-top", 24, 16, 3, 600, 320);
 
     @include adaptiveValue("padding-bottom", 32, 24, 0, 1366, 600);
     @include adaptiveValue("padding-bottom", 24, 16, 3, 600, 320);
+  }
+  &__body {
     display: flex;
     flex-direction: row;
     align-items: center;
