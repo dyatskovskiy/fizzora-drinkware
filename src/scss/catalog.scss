@@ -1,4 +1,4 @@
-.products {
+.catalog {
   &__container {
     @include adaptiveValue("padding-left", 72, 16, 0, 1366, 600);
 
@@ -56,11 +56,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
-  background-image: url("@img/products/1.png");
+  background-image: url("@img/catalog/1.png");
   @include adaptiveValue("padding-top", 20, 68, 0, 600, 320);
 
   &:last-child {
-    background-image: url("@img/products/2.png");
+    background-image: url("@img/catalog/2.png");
     @include adaptiveValue("padding-top", 567, 225);
   }
 
@@ -75,7 +75,7 @@
 }
 
 @media (max-width: $tablet) {
-  .products {
+  .catalog {
     &__container {
       flex-direction: column;
       height: auto;
