@@ -66,6 +66,7 @@
 
   &__title {
     color: $secondaryColor;
+    font-weight: 400;
     @include adaptiveValue("max-width", 190, 193, 0, 1366, 600);
     @include adaptiveValue("max-width", 193, 158, 3, 600, 320);
 

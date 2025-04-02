@@ -7,11 +7,15 @@ import { flsModules } from "./modules.js";
 // потрібної категорії
 
 function setActiveCategory() {
-  const categoryList = document.querySelector(".products__category-list");
+  const categoryList = document.querySelector(".catalog__category-list");
 
   categoryList &&
     categoryList.addEventListener("click", (e) => {
+      console.log(e.currentTarget);
+      e.stopPropagation();
       const activeCategory = document.querySelector(".active");
+
+      console.log(activeCategory);
 
       if (e.target === e.currentTarget) return;
 

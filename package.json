@@ -79,7 +79,6 @@
     "string-replace-loader": "latest",
     "style-loader": "latest",
     "swiper": "latest",
-    "tailwindcss": "latest",
     "terser-webpack-plugin": "latest",
     "tippy.js": "latest",
     "transform-runtime": "0.0.0",
@@ -92,7 +91,6 @@
     "webpack-stream": "latest"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.0.0",
     "gulp-cheerio": "^1.0.0",
     "isotope-layout": "^3.0.6",
     "react": "^18.2.0",

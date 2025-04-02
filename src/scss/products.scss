@@ -1,0 +1,82 @@
+.products {
+  &__section {
+    max-height: toRem(1231);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row-reverse;
+
+    @include adaptiveValue("gap", 110, 55, 0, 1366, 600);
+    @include adaptiveValue("gap", 55, 73, 3, 600, 320);
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.article {
+  &__title {
+    @include adaptiveValue("margin-bottom", 44, 24, 0, 1366, 600);
+    @include adaptiveValue("margin-bottom", 24, 32, 3, 600, 324);
+  }
+
+  &__description {
+    @include adaptiveValue("font-size", 16, 14, 0, 600, 320);
+    line-height: math.div(28, 16);
+    margin-bottom: toRem(24);
+  }
+
+  &__image {
+  }
+}
+
+.article.article_right {
+  @include adaptiveValue("padding-left", 66, 33, 3, 600, 320);
+
+  @include adaptiveValue("gap", 56, 24, 0, 1366, 600);
+  @include adaptiveValue("gap", 24, 32, 3, 600, 320);
+}
+
+.article.article_right .article__text {
+  @include adaptiveValue("padding-left", 100, 0, 0, 1366, 600);
+  @include adaptiveValue("padding-top", 30, 0, 0, 1366, 600);
+  @include adaptiveValue("padding-right", 20, 16, 1, 960, 600);
+
+  @include adaptiveValue("max-width", 382, 444, 0, 1366, 600);
+  @include adaptiveValue("max-width", 444, 256, 3, 600, 320);
+}
+
+.article_right__image {
+  aspect-ratio: 573 / 808;
+}
+
+.article.article_left {
+  @include adaptiveValue("padding-right", 100, 48, 3, 600, 320);
+  @include adaptiveValue("gap", 32, 20, 0, 1366, 600);
+
+  @include adaptiveValue("max-height", 816, 664, 2, 1366, 600);
+}
+
+.article.article_left .article__text {
+  @include adaptiveValue("padding-left", 100, 16, 0, 1366, 600);
+}
+
+.article.article_left .article__title {
+  @include adaptiveValue("max-width", 437, 339, 0, 1366, 600);
+  @include adaptiveValue("max-width", 339, 211, 3, 600, 320);
+}
+
+.article_left__image {
+  aspect-ratio: 683 / 513;
+}
+
+@media (max-width: $tablet) {
+  .products {
+    &__container {
+      flex-direction: column;
+    }
+  }
+}
