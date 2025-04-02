@@ -28,9 +28,6 @@
     line-height: math.div(28, 16);
     margin-bottom: toRem(24);
   }
-
-  &__image {
-  }
 }
 
 .article.article_right {
@@ -43,9 +40,9 @@
 .article.article_right .article__text {
   @include adaptiveValue("padding-left", 100, 0, 0, 1366, 600);
   @include adaptiveValue("padding-top", 30, 0, 0, 1366, 600);
-  @include adaptiveValue("padding-right", 20, 16, 1, 960, 600);
+  @include adaptiveValue("padding-right", 20, 16, 1, 1050, 600);
 
-  @include adaptiveValue("max-width", 382, 444, 0, 1366, 600);
+  @include adaptiveValue("max-width", 462, 444, 0, 1366, 600);
   @include adaptiveValue("max-width", 444, 256, 3, 600, 320);
 }
 
