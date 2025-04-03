@@ -1,7 +1,10 @@
-.hero {
+.hero { 
+  max-width: 2440px;
+  margin: 0 auto;
   @include adaptiveValue("height", 795, 406);
   background-image: url("@img/hero/hero.png");
   background-size: cover;
+  
   @include adaptiveValue("background-position-x", 0, -50, 0, 900, 600);
 
   &__content {
