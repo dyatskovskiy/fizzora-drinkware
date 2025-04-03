@@ -5,9 +5,8 @@
 
 // Підключення шрифтів ====================================================================================================
 
-@import url(https://fonts.googleapis.com/css?family=Mulish:regular,600,700);
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans:regular);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:regular);
+@import url(https://fonts.googleapis.com/css?family=Mulish:regular,600,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:regular&display=swap);
 
 // Підключення іконкових шрифтів ====================================================================================================
 // Підключити, якщо є файл іконкового шрифту
@@ -28,7 +27,7 @@ $mainBackground: var(--bg-primary);
 
 $footerBackground: var(--bg-secondary);
 
-$border: var(--grid-border);
+$borderColor: var(--grid-border);
 
 $hoverBgLight: #ffffff30;
 
@@ -68,6 +67,7 @@ $responsiveType: 1;
 @import "base/null";
 
 // Стилі тега BODY ====================================================================================================
+
 body {
   background-color: $mainBackground;
   // scrollbar-gutter: stable;
@@ -175,4 +175,5 @@ body {
 @import "hero";
 @import "catalog";
 @import "products";
+@import "cocktails-grid";
 // Підключення стилів окремих сторінок

@@ -1,0 +1,72 @@
+.cocktails {
+  &__container {
+    padding-left: toRem(10);
+    padding-right: toRem(10);
+  }
+
+  &__title {
+    @include adaptiveValue("padding-left", 24, 16);
+    margin-bottom: toRem(16);
+  }
+
+  &__grid {
+    border-top: 1px solid $borderColor;
+    border-left: 1px solid $borderColor;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card-item {
+  @include adaptiveValue("padding-top", 12, 16, 0, 1366, 600);
+  @include adaptiveValue("padding-left", 12, 16, 0, 1366, 600);
+  @include adaptiveValue("padding-right", 12, 16, 0, 1366, 600);
+
+  border-right: 1px solid $borderColor;
+  border-bottom: 1px solid $borderColor;
+
+  &__image {
+    height: auto;
+    aspect-ratio: 319 / 344;
+  }
+
+  &__text-container {
+    @include adaptiveValue("padding-top", 32, 20, 0, 1366, 600);
+    @include adaptiveValue("padding-bottom", 32, 20, 0, 1366, 600);
+  }
+
+  &__name {
+    @include adaptiveValue("font-size", 18, 14, 0, 1366, 600);
+  }
+}
+
+@media (max-width: $pc) {
+  .cocktails {
+    &__grid {
+      grid-template-columns: repeat(8, auto);
+    }
+  }
+
+  .card-item {
+    @include adaptiveValue("width", 340, 257, 0, 1366, 600);
+
+    &__image {
+      aspect-ratio: 225 / 260;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .card-item {
+    @include adaptiveValue("width", 257, 215, 3, 600, 320);
+
+    &__image {
+      aspect-ratio: 183 / 166;
+    }
+
+    &__text-container {
+      @include adaptiveValue("padding-top", 20, 16, 0, 600, 320);
+      @include adaptiveValue("padding-bottom", 20, 16, 0, 600, 320);
+    }
+  }
+}

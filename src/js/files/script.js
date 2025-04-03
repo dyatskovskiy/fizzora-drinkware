@@ -35,6 +35,12 @@ function activateXScroll() {
     let startX;
     let scrollLeft;
 
+    scrollContainer.addEventListener("dragstart", (event) => {
+      if (event.target.tagName === "IMG") {
+        event.preventDefault();
+      }
+    });
+
     scrollContainer.addEventListener("mousedown", (e) => {
       if (e.target.tagName == "P" || e.target.tagName == "H3") {
         return;
@@ -45,18 +51,21 @@ function activateXScroll() {
       scrollContainer.style.cursor = "grabbing";
       startX = e.pageX - scrollContainer.offsetLeft;
       scrollLeft = scrollContainer.scrollLeft;
+      console.log("down");
     });
 
     scrollContainer.addEventListener("mouseleave", () => {
       isDown = false;
       document.body.style.userSelect = "";
       scrollContainer.style.cursor = "unset";
+      console.log("leave");
     });
 
     scrollContainer.addEventListener("mouseup", () => {
       isDown = false;
       document.body.style.userSelect = "";
       scrollContainer.style.cursor = "unset";
+      console.log("up");
     });
 
     scrollContainer.addEventListener("mousemove", (e) => {
@@ -64,7 +73,7 @@ function activateXScroll() {
 
       e.preventDefault();
       const x = e.pageX - scrollContainer.offsetLeft;
-      const walk = (x - startX) * 30; //  scroll speed
+      const walk = (x - startX) * 2; //  scroll speed
       scrollContainer.scrollLeft = scrollLeft - walk;
     });
 
