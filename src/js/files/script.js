@@ -51,21 +51,18 @@ function activateXScroll() {
       scrollContainer.style.cursor = "grabbing";
       startX = e.pageX - scrollContainer.offsetLeft;
       scrollLeft = scrollContainer.scrollLeft;
-      console.log("down");
     });
 
     scrollContainer.addEventListener("mouseleave", () => {
       isDown = false;
       document.body.style.userSelect = "";
       scrollContainer.style.cursor = "unset";
-      console.log("leave");
     });
 
     scrollContainer.addEventListener("mouseup", () => {
       isDown = false;
       document.body.style.userSelect = "";
       scrollContainer.style.cursor = "unset";
-      console.log("up");
     });
 
     scrollContainer.addEventListener("mousemove", (e) => {
