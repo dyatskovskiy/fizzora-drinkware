@@ -1,0 +1,92 @@
+.collection {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 50%);
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.collection-article {
+  &_left {
+    @include adaptiveValue("padding-right", 114, 45, 0, 1366, 600);
+    @include adaptiveValue("padding-right", 100, 50, 3, 599, 320);
+  }
+
+  &_right {
+    @include adaptiveValue("padding-left", 66, 53, 0, 600, 320);
+    @include adaptiveValue("padding-right", 34, 0, 0, 600, 320);
+  }
+
+  &__image {
+    height: auto;
+  }
+
+  &__title {
+    @include adaptiveValue("width", 286, 230, 0);
+    @include adaptiveValue("margin-bottom", 36, 24, 0, 1366, 600);
+  }
+
+  &__description {
+    margin-bottom: toRem(24);
+    font-size: toRem(16);
+    line-height: math.div(28, 16);
+  }
+
+  &_left &__text-block {
+    @include adaptiveValue("padding-left", 112, 66, 0, 1366, 600);
+    @include adaptiveValue("padding-left", 66, 16, 3, 600, 320);
+  }
+
+  &_left &__image {
+    @include adaptiveValue("margin-top", 44, 28, 0, 1366, 600);
+    @include adaptiveValue("margin-top", 28, 32, 3, 600, 320);
+
+    aspect-ratio: 569/752;
+  }
+
+  &_right &__text-block {
+    @include adaptiveValue("padding-left", 120, 0, 0, 1366, 600);
+    @include adaptiveValue("padding-right", 95, 32, 0, 1366, 600);
+  }
+
+  &_right &__image {
+    @include adaptiveValue("margin-bottom", 36, 24, 0, 1366, 600);
+    @include adaptiveValue("margin-bottom", 24, 20, 3, 600, 320);
+
+    aspect-ratio: 683/491;
+  }
+}
+
+// @media (max-width: toEm(950)) {
+//   .collection {
+//     &__container {
+//       display: flex;
+//       flex-direction: column-reverse;
+//       @include adaptiveValue("gap", 56, 72, 0, 600, 320);
+//     }
+
+//     &__article {
+//       display: flex;
+//       flex-direction: column-reverse;
+//     }
+//   }
+// }
+
+@media (max-width: $tablet) {
+  .collection {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      @include adaptiveValue("gap", 40, 64, 0, 600, 320);
+    }
+
+    &__article {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
