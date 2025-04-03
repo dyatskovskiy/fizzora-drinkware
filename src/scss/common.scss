@@ -31,6 +31,7 @@
   @include adaptiveValue("line-height", 19, 18, 0, 600, 320);
 
   transition: background-color $mainTransition;
+  cursor: pointer;
 }
 
 .button.button_dark {
