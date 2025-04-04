@@ -8,19 +8,21 @@
 
 .title_h2 {
   font-weight: 700;
-
   @include adaptiveValue("font-size", 34, 28, 0, 1366, 600);
   @include adaptiveValue("font-size", 34, 28, 3, 1366, 600);
-
   @include adaptiveValue("line-height", 40, 35, 0, 1366, 600);
-
   @include adaptiveValue("letter-spacing", 0.25, 0.206, 0, 1366, 600);
 }
 
 .title_h3 {
-  line-height: math.div(28, 24);
-
   @include adaptiveValue("font-size", 24, 22, 0, 1366, 600);
+  line-height: math.div(28, 24);
+}
+
+.title_h4 {
+  font-weight: 700;
+  line-height: math.div(24, 14);
+  letter-spacing: 0.1px;
 }
 
 // Button styles ====================
@@ -52,5 +54,26 @@
   &:focus {
     background-color: $hoverBgLight;
   }
+}
+
+.link_underlined {
+  position: relative;
+}
+
+.link_underlined::after {
+  content: "";
+  color: $mainColor;
+  background: #000;
+  height: 1px;
+  width: 0;
+  position: absolute;
+  left: 0%;
+  bottom: -40%;
+
+  transition: width $mainTransition;
+}
+
+.link_underlined:is(:hover, :focus).link_underlined::after {
+  width: 100%;
 }
 // ============================================================== //

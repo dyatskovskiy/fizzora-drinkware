@@ -1,3 +1,43 @@
-//====================================================================================================
+.footer {
+  background-color: $footerBackground;
+  border-top: 1px solid $borderColor;
 
-//====================================================================================================
+  &__container {
+    @include adaptiveValue("padding-left", 120, 16, 0, 1366, 600);
+    @include adaptiveValue("padding-right", 120, 48, 0, 1366, 600);
+    padding-top: toRem(32);
+    @include adaptiveValue("padding-bottom", 72, 36, 0, 600, 320);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: toRem(48);
+    row-gap: toRem(30);
+  }
+
+  &__left-menu {
+    display: flex;
+    flex-direction: row;
+    @include adaptiveValue("column-gap", 92, 48, 0, 1366, 600);
+  }
+}
+
+.menu {
+  &__title {
+    margin-bottom: toRem(20);
+    text-wrap: nowrap;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("gap", 12, 10, 0, 600, 320);
+  }
+
+  &__link {
+    font-weight: 600;
+    @include adaptiveValue("font-size", 14, 12, 0, 600, 320);
+    text-wrap: nowrap;
+  }
+}
