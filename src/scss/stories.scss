@@ -1,0 +1,67 @@
+.stories {
+  &__title {
+    @include adaptiveValue("margin-bottom", 18, 15, 0, 1366, 600);
+    @include adaptiveValue("padding-left", 21, 15, 0, 1366, 600);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid $borderColor;
+    border-left: 1px solid $borderColor;
+  }
+
+  &__story {
+    border-right: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+    @include adaptiveValue("min-width", 342, 258, 0, 1366, 600);
+    @include adaptiveValue("min-width", 258, 256, 3, 600, 320);
+
+    @include adaptiveValue("min-height", 760, 673, 0, 1366, 600);
+    @include adaptiveValue("min-height", 673, 539, 3, 600, 320);
+
+    @include adaptiveValue("padding", 20, 16, 0, 1366, 600);
+  }
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    height: auto;
+    aspect-ratio: 225 / 335;
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include adaptiveValue("margin-top", 18, 15, 0, 1366, 600);
+    @include adaptiveValue("margin-top", 15, 12, 3, 1366, 600);
+    height: 100%;
+  }
+
+  &__text-block * {
+    flex-grow: 10;
+  }
+
+  &__theme {
+    font-weight: 600;
+    line-height: math.div(24, 14);
+    letter-spacing: 0.1px;
+  }
+
+  &__text {
+    line-height: math.div(20, 14);
+    letter-spacing: 0.25px;
+  }
+}
+
+@media (max-width: 320px) {
+  .story {
+    &__image {
+      aspect-ratio: 224 / 173;
+    }
+  }
+}
