@@ -18,3 +18,4 @@ flsScroll.pageNavigation();
 
 /* Підключаємо файли зі своїм кодом */
 import "./files/script.js";
+import "./files/anim.js";
