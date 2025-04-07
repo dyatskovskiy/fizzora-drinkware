@@ -113,7 +113,7 @@ gsap.from(rightProductArticle, {
   },
 });
 
-// Cocktails Grid animatin
+// ======== Cocktails Grid animation ========
 const cocktailsGrid = document.getElementById("cocktails-container");
 const cocktailCards = Array.from(cocktailsGrid.children);
 
@@ -125,6 +125,37 @@ gsap.from(cocktailCards, {
   scrollTrigger: {
     trigger: cocktailsGrid,
     start: "top bottom",
+    ease: "circ.out",
+  },
+});
+
+// ======== Collection animation ========
+const leftCollectionArticle = document.getElementById(
+  "collection-article_left"
+);
+const rightCollectionArticle = document.getElementById(
+  "collection-article_right"
+);
+
+gsap.from(leftCollectionArticle, {
+  duration: 1,
+  x: -leftCollectionArticle.offsetWidth,
+  scrollTrigger: {
+    trigger: leftCollectionArticle,
+    start: "top bottom",
+    end: "+=50%",
+    ease: "circ.out",
+  },
+});
+
+gsap.from(rightCollectionArticle, {
+  delay: 0.4,
+  duration: 0.8,
+  x: rightCollectionArticle.offsetWidth,
+  scrollTrigger: {
+    trigger: rightCollectionArticle,
+    start: "top 80%",
+    end: "+=50%",
     ease: "circ.out",
   },
 });
