@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);
 
 // ======== HEADER ANIMATION ========
-const header = document.querySelector(".header");
+const header = document.getElementById("header-body");
 
 // add header height to css-variable to use later
 document.documentElement.style.setProperty(
@@ -14,20 +14,17 @@ document.documentElement.style.setProperty(
 );
 // ============================
 
-gsap.from(header, { duration: 0.8, opacity: 0, y: "-100%" });
+gsap.from(header, { duration: 0.8, opacity: 0, y: "-200%" });
 
 // ======== HERO ANIMATION ========
+const hero = document.getElementById("hero-section");
 const heroTimeline = gsap.timeline();
 
-heroTimeline.fromTo(
-  ".hero",
-  {
-    opacity: 0.1,
-
-    ease: "power4.in",
-  },
-  { duration: 1, opacity: 1 }
-);
+heroTimeline.from(hero, {
+  duration: 0.5,
+  opacity: 0.1,
+  ease: "power4.in",
+});
 
 heroTimeline.from(".content__title", {
   duration: 0.4,
@@ -44,7 +41,7 @@ heroTimeline.from([".content__top-text", ".content__button"], {
 });
 
 // ======== CATALOG ANIMATION ========
-const catalogContainer = document.querySelector(".catalog__container");
+const catalogContainer = document.getElementById("catalog-container");
 
 const blocksArray = Array.from(catalogContainer.children);
 
