@@ -114,3 +114,17 @@ gsap.from(rightProductArticle, {
 });
 
 // Cocktails Grid animatin
+const cocktailsGrid = document.getElementById("cocktails-container");
+const cocktailCards = Array.from(cocktailsGrid.children);
+
+gsap.from(cocktailCards, {
+  rotateY: "-90deg",
+  opacity: 0,
+  duration: 0.6,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: cocktailsGrid,
+    start: "top bottom",
+    ease: "circ.out",
+  },
+});
