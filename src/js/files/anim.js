@@ -4,20 +4,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// ======== Header animation ========
-const headerEl = document.querySelector(".header");
+// ======== HEADER ANIMATION ========
+const header = document.querySelector(".header");
 
 // add header height to css-variable to use later
 document.documentElement.style.setProperty(
   "--header-height",
-  `${headerEl.offsetHeight}px`
+  `${header.offsetHeight}px`
 );
+// ============================
 
-const headerTimeline = gsap.timeline();
+gsap.from(header, { duration: 0.8, opacity: 0, y: "-100%" });
 
-headerTimeline.from(headerEl, { duration: 0.8, opacity: 0, y: "-100%" });
-
-// ======== Hero animation ========
+// ======== HERO ANIMATION ========
 const heroTimeline = gsap.timeline();
 
 heroTimeline.fromTo(
@@ -44,7 +43,7 @@ heroTimeline.from([".content__top-text", ".content__button"], {
   ease: "power4.out",
 });
 
-// ======== Catalog animation ========
+// ======== CATALOG ANIMATION ========
 const catalogContainer = document.querySelector(".catalog__container");
 
 const blocksArray = Array.from(catalogContainer.children);
@@ -86,7 +85,7 @@ gsap.from(blocksArray[2], {
   y: blocksArray[2].offsetHeight,
 });
 
-// ======== Products animation ========
+// ======== PRODUCTS ANIMATION ========
 const leftProductArticle = document.getElementById("products-article_left");
 const rightProductArticle = document.getElementById("products-article_right");
 
@@ -113,7 +112,7 @@ gsap.from(rightProductArticle, {
   },
 });
 
-// ======== Cocktails Grid animation ========
+// ======== COCKTAILS ANIMATION ========
 const cocktailsGrid = document.getElementById("cocktails-container");
 const cocktailCards = Array.from(cocktailsGrid.children);
 
@@ -160,7 +159,7 @@ gsap.from(rightCollectionArticle, {
   },
 });
 
-// ======== Stories animation ========
+// ======== STORIES ANIMATION ========
 
 const storiesContainer = document.getElementById("stories-list");
 const storiesCards = Array.from(storiesContainer.children);
@@ -176,3 +175,9 @@ gsap.from(storiesCards, {
     ease: "circ.out",
   },
 });
+
+// ======== FOOTER ANIMATION ========
+
+const footer = document.getElementById("footer-container");
+
+gsap.from(footer, { duration: 0.8, opacity: 0, y: "100%" });
