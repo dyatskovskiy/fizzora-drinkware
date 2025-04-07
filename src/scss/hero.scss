@@ -1,7 +1,6 @@
 .hero {
   max-width: 2440px;
   @include adaptiveValue("min-height", 795, 406);
-  height: calc(100vh - var(--header-height));
   margin: 0 auto;
   background-image: url("@img/hero/hero.webp");
   background-size: cover;

@@ -7,17 +7,10 @@ gsap.registerPlugin(ScrollTrigger);
 // ======== HEADER ANIMATION ========
 const header = document.getElementById("header-body");
 
-// add header height to css-variable to use later
-document.documentElement.style.setProperty(
-  "--header-height",
-  `${header.offsetHeight}px`
-);
-// ============================
-
 gsap.from(header, { duration: 0.8, opacity: 0, y: "-200%" });
 
 // ======== HERO ANIMATION ========
-const hero = document.getElementById("hero-section");
+const hero = document.getElementById("hero");
 const heroTimeline = gsap.timeline();
 
 heroTimeline.from(hero, {
@@ -88,6 +81,7 @@ const rightProductArticle = document.getElementById("products-article_right");
 
 gsap.from(leftProductArticle, {
   duration: 1,
+  opacity: 0,
   x: -leftProductArticle.offsetWidth,
   scrollTrigger: {
     trigger: leftProductArticle,
@@ -99,6 +93,7 @@ gsap.from(leftProductArticle, {
 
 gsap.from(rightProductArticle, {
   delay: 0.4,
+  opacity: 0,
   duration: 0.8,
   x: rightProductArticle.offsetWidth,
   scrollTrigger: {
@@ -116,8 +111,8 @@ const cocktailCards = Array.from(cocktailsGrid.children);
 gsap.from(cocktailCards, {
   rotateY: "-90deg",
   opacity: 0,
-  duration: 0.6,
-  stagger: 0.2,
+  duration: 0.8,
+  stagger: 0.1,
   scrollTrigger: {
     trigger: cocktailsGrid,
     start: "top bottom",
@@ -135,6 +130,7 @@ const rightCollectionArticle = document.getElementById(
 
 gsap.from(leftCollectionArticle, {
   duration: 1,
+  opacity: 0,
   x: -leftCollectionArticle.offsetWidth,
   scrollTrigger: {
     trigger: leftCollectionArticle,
@@ -147,6 +143,7 @@ gsap.from(leftCollectionArticle, {
 gsap.from(rightCollectionArticle, {
   delay: 0.4,
   duration: 0.8,
+  opacity: 0,
   x: rightCollectionArticle.offsetWidth,
   scrollTrigger: {
     trigger: rightCollectionArticle,
