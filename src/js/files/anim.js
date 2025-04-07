@@ -159,3 +159,20 @@ gsap.from(rightCollectionArticle, {
     ease: "circ.out",
   },
 });
+
+// ======== Stories animation ========
+
+const storiesContainer = document.getElementById("stories-list");
+const storiesCards = Array.from(storiesContainer.children);
+
+gsap.from(storiesCards, {
+  rotateY: "-90deg",
+  opacity: 0,
+  duration: 0.6,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: storiesContainer,
+    start: "top bottom",
+    ease: "circ.out",
+  },
+});
