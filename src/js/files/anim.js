@@ -180,4 +180,13 @@ gsap.from(storiesCards, {
 
 const footer = document.getElementById("footer-container");
 
-gsap.from(footer, { duration: 0.8, opacity: 0, y: "100%" });
+gsap.from(footer, {
+  duration: 0.5,
+  opacity: 0,
+  y: "60%",
+  scrollTrigger: {
+    trigger: footer,
+    start: "top bottom",
+    ease: "circ.out",
+  },
+});
