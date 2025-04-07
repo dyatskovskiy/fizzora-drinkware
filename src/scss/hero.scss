@@ -3,7 +3,7 @@
   @include adaptiveValue("min-height", 795, 406);
   height: calc(100vh - var(--header-height));
   margin: 0 auto;
-  background-image: url("@img/hero/hero.png");
+  background-image: url("@img/hero/hero.webp");
   background-size: cover;
 
   @include adaptiveValue("background-position-x", 0, -50, 0, 900, 600);
